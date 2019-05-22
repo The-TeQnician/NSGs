@@ -19,13 +19,15 @@
       "defaultValue": "default",
       "metadata": {
         "description": "The name of the existing subnet."
-      },
+      }
+    },
       "NSGName": {
         "type": "string",
         "defaultValue": "default",
         "metadata": {
           "description": "The name of the new NSG."
-        },
+        }
+      },
     "_artifactsLocation": {
       "type": "string",
       "metadata": {
@@ -45,7 +47,7 @@
   "resources": [
     {
       "type": "Microsoft.Network/networkSecurityGroups",
-      "name": "'parameters('NSGname')",
+      "name": "parameters('NSGname')",
       "location": "[resourceGroup().location]",
       "apiVersion": "2018-03-01",
       "properties": {
@@ -92,7 +94,7 @@
             "value": "[reference(resourceId(parameters('virtualNetworkResourceGroupName'), 'Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworkName'), parameters('subnetName')), '2018-03-01').addressPrefix]"
           },
           "nsgId": {
-            "value": "[resourceId('Microsoft.Network/networkSecurityGroups','parameters('NSGname')]"
+            "value": "[resourceId('Microsoft.Network/networkSecurityGroups'),parameters('NSGname')]"
           }
         }
       }
