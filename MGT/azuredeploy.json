@@ -45,7 +45,7 @@
   "resources": [
     {
       "type": "Microsoft.Network/networkSecurityGroups",
-      "name": "SICG-WE-P-NSG-VNET-01-Management",
+      "name": "'parameters('NSGname')",
       "location": "[resourceGroup().location]",
       "apiVersion": "2018-03-01",
       "properties": {
@@ -92,7 +92,7 @@
             "value": "[reference(resourceId(parameters('virtualNetworkResourceGroupName'), 'Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworkName'), parameters('subnetName')), '2018-03-01').addressPrefix]"
           },
           "nsgId": {
-            "value": "[resourceId('Microsoft.Network/networkSecurityGroups','parameters('virtualNetworkResourceGroupName')]"
+            "value": "[resourceId('Microsoft.Network/networkSecurityGroups','parameters('NSGname')]"
           }
         }
       }
