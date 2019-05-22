@@ -26,7 +26,7 @@
       "metadata": {
         "description": "The base URI where artifacts required by this template are located."
       },
-      "defaultValue": "https://raw.githubusercontent.com/The-TeQnician/NSGs/"
+      "defaultValue": "https://raw.githubusercontent.com/The-TeQnician/NSGs/master/MGT"
     },
     "_artifactsLocationSasToken": {
       "type": "securestring",
@@ -40,7 +40,7 @@
   "resources": [
     {
       "type": "Microsoft.Network/networkSecurityGroups",
-      "name": "new-nsg",
+      "name": "SICG-WE-P-NSG-VNET-01-Management",
       "location": "[resourceGroup().location]",
       "apiVersion": "2018-03-01",
       "properties": {
